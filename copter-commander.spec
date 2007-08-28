@@ -80,7 +80,6 @@ EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Copter Commander
 Comment=Copter Commander
 Exec=%_gamesbindir/%{name}
@@ -92,7 +91,6 @@ EOF
 
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}-glx.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Copter-Commander Glx
 Comment=Copter Commander OpenGL
 Exec=%_gamesbindir/glx-%{name}
