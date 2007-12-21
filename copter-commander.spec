@@ -15,6 +15,7 @@ Source12: %name-48.png
 License: GPL
 Group: Games/Strategy
 Url: http://sourceforge.net/projects/coco/
+BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libgnome-devel
 BuildRequires: libtiff-devel
 BuildRequires: libgtkglarea-devel = 1.2.3 
