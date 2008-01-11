@@ -53,29 +53,10 @@ cd %buildroot%_gamesbindir
 ln -s glx-%name %name-glx
 )
 
-mkdir -p %buildroot{%_menudir,%_liconsdir,%_iconsdir,%_miconsdir}
 cp %SOURCE10 %buildroot%_miconsdir/%name.png
 cp %SOURCE11 %buildroot%_iconsdir/%name.png
 cp %SOURCE12 %buildroot%_liconsdir/%name.png
 
-cat > %buildroot%_menudir/%name <<EOF
-?package(%{name}):\
-        command="%{_gamesbindir}/%{name}"\
-        title="Copter-Commander"\
-        longtitle="Copter Commander"\
-        needs="x11"\
-        section="More Applications/Games/Arcade"\
-        icon="%{name}.png"\
-        xdg="true"
-?package(%{name}):\
-        command="%{_gamesbindir}/glx-%{name}"\
-        title="Copter-Commander Glx"\
-        longtitle="Copter Commander OpenGL"\
-        needs="x11"\
-        section="More Applications/Games/Arcade"\
-        icon="%{name}.png"\
-        xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -122,7 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc DEVEL GNOME-HACKS ChangeLog INSTALL copyright
 %_gamesbindir/*
 %_gamesdatadir/%name
-%_menudir/%name
 %_liconsdir/%name.png
 %_iconsdir/%name.png
 %_miconsdir/%name.png
