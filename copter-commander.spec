@@ -1,6 +1,6 @@
 %define name copter-commander
 %define version 1.8
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: A 2d networked helicopter game
 Name: %{name}
@@ -53,6 +53,7 @@ cd %buildroot%_gamesbindir
 ln -s glx-%name %name-glx
 )
 
+mkdir -p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir}
 cp %SOURCE10 %buildroot%_miconsdir/%name.png
 cp %SOURCE11 %buildroot%_iconsdir/%name.png
 cp %SOURCE12 %buildroot%_liconsdir/%name.png
@@ -107,10 +108,3 @@ rm -rf $RPM_BUILD_ROOT
 %_iconsdir/%name.png
 %_miconsdir/%name.png
 %{_datadir}/applications/*.desktop
-
-* Thu Jan  8 2004 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.8-2mdk
-- DIRM fix
-- set RPM_OPT_FLAGS
-
-* Mon Oct 13 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.8-1mdk
-- 1st mdk package
