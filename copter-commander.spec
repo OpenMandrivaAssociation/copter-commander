@@ -87,17 +87,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{update_menus}
-%if %mdkversion > 200600
 %update_icon_cache hicolor
 %update_icon_cache locolor
-%endif
 
 %postun
 %{clean_menus}
-%if %mdkversion > 200600
 %clean_icon_cache hicolor
 %clean_icon_cache locolor
-%endif
 
 %files
 %defattr(-,root,root)
