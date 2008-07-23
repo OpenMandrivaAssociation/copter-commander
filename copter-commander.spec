@@ -1,6 +1,6 @@
 %define name copter-commander
 %define version 1.8
-%define release %mkrel 4
+%define release %mkrel 6
 
 Summary: A 2d networked helicopter game
 Name: %{name}
