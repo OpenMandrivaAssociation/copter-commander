@@ -1,6 +1,6 @@
 %define name copter-commander
 %define version 1.8
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary: A 2d networked helicopter game
 Name: %{name}
@@ -89,15 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 %if %mdkversion < 200900
 %{update_menus}
 %update_icon_cache hicolor
-%endif
-%update_icon_cache locolor
-
 %postun
-%if %mdkversion < 200900
 %{clean_menus}
 %clean_icon_cache hicolor
 %endif
-%clean_icon_cache locolor
 
 %files
 %defattr(-,root,root)
