@@ -1,19 +1,19 @@
 %define name copter-commander
 %define version 1.8
-%define release %mkrel 7
+%define release %mkrel 8 
 
 Summary: A 2d networked helicopter game
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
-Patch0:  %name-makefile-destdir.patch
+Patch0:  %{name}-makefile-destdir.patch
 Patch1:  copter-commander-1.8-lvalue.patch
 Source10: %name-16.png
 Source11: %name-32.png
 Source12: %name-48.png
-License: GPL
-Group: Games/Strategy
+License: GPLv2+
+Group: Games/Arcade
 Url: http://sourceforge.net/projects/coco/
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libgnome-devel
@@ -28,7 +28,7 @@ Alley.
 
 %prep
 %setup -q
-%patch -p0
+%patch0 -p0
 %patch1 -p0 -b .lvalue
 
 %build
