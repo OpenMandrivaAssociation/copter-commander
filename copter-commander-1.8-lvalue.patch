@@ -1,0 +1,16 @@
+Index: gnome-kennel.c
+===================================================================
+--- gnome-kennel.c
++++ gnome-kennel.c	2006-07-17 11:29:09.000000000 +0200
+@@ -293,7 +293,10 @@
+ 
+       if (child->widget == widget)
+ 	{
+-	  (last ? last->next : kennel->children) = slist->next;
++      if (last)
++          last->next = slist->next;
++      else
++          kennel->children = slist->next;
+ 	  g_slist_free_1 (slist);
+ 	  g_free (child);
+ 	  break;

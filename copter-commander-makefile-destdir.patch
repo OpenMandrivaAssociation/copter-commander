@@ -1,0 +1,41 @@
+--- Makefile.old	2003-10-13 12:20:10.000000000 +0200
++++ Makefile	2003-10-13 12:26:19.000000000 +0200
+@@ -54,7 +54,8 @@
+ 
+ 
+ # INSTALLATION LOCATIONS
+-COCO_INSTALL_DIRECTORY=/usr/local
++DESTDIR=
++COCO_INSTALL_DIRECTORY=/usr/
+ COCO_BIN_DIRECTORY=${COCO_INSTALL_DIRECTORY}/bin
+ COCO_SHARE_DIRECTORY=${COCO_INSTALL_DIRECTORY}/share/copter-commander/${COCO_MAJOR_VERSION}.${COCO_MINOR_VERSION}
+ COCO_DOC_DIRECTORY=${COCO_SHARE_DIRECTORY}/doc
+@@ -477,17 +478,17 @@
+ install:
+ 	set -e ;\
+ 	mkdir -p \
+-          ${COCO_BIN_DIRECTORY} \
+-	  ${COCO_SHARE_DIRECTORY} \
+-	  ${COCO_DOC_DIRECTORY} \
+-	  ${COCO_LEVEL_DIRECTORY} \
+-	  ${COCO_SOUND_DIRECTORY} ;\
+-	install copter-commander ${COCO_BIN_DIRECTORY} ;\
+-	install glx-copter-commander ${COCO_BIN_DIRECTORY} ;\
+-	install -m u=rw,go=r keybindings.txt manual.txt copyright ${COCO_DOC_DIRECTORY} ;\
+-	install -m u=rw,go=r levels/*.ccl ${COCO_LEVEL_DIRECTORY} ;\
+-	install -m u=rw,go=r levels/*.cct ${COCO_LEVEL_DIRECTORY} ;\
+-	install -m u=rw,go=r sounds/*.wav ${COCO_SOUND_DIRECTORY}
++          $(DESTDIR)${COCO_BIN_DIRECTORY} \
++	  $(DESTDIR)${COCO_SHARE_DIRECTORY} \
++	  $(DESTDIR)${COCO_DOC_DIRECTORY} \
++	  $(DESTDIR)${COCO_LEVEL_DIRECTORY} \
++	  $(DESTDIR)${COCO_SOUND_DIRECTORY} ;\
++	install copter-commander $(DESTDIR)${COCO_BIN_DIRECTORY} ;\
++	install glx-copter-commander $(DESTDIR)${COCO_BIN_DIRECTORY} ;\
++	install -m u=rw,go=r keybindings.txt manual.txt copyright $(DESTDIR)${COCO_DOC_DIRECTORY} ;\
++	install -m u=rw,go=r levels/*.ccl $(DESTDIR)${COCO_LEVEL_DIRECTORY} ;\
++	install -m u=rw,go=r levels/*.cct $(DESTDIR)${COCO_LEVEL_DIRECTORY} ;\
++	install -m u=rw,go=r sounds/*.wav $(DESTDIR)${COCO_SOUND_DIRECTORY}
+ 
+ COCO_RPM_RELEASE=1
+ COCO_RPM_SPEC=copter-commander-${COCO_MAJOR_VERSION}.${COCO_MINOR_VERSION}-${COCO_RPM_RELEASE}.spec
