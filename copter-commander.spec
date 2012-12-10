@@ -103,3 +103,58 @@ rm -rf $RPM_BUILD_ROOT
 %_iconsdir/%name.png
 %_miconsdir/%name.png
 %{_datadir}/applications/*.desktop
+
+
+%changelog
+* Thu May 14 2009 Samuel Verschelde <stormi@mandriva.org> 1.8-8mdv2010.0
++ Revision: 375634
+- fix Licence
+- fix Group (#49502)
+- fix spec file (Patch0 was not applied)
+
+* Fri Aug 15 2008 Götz Waschk <waschk@mandriva.org> 1.8-7mdv2009.0
++ Revision: 272473
+- remove icon cache call, locolor has no icon theme (bug #42852)
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.8-6mdv2009.0
++ Revision: 243637
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Mon Feb 18 2008 Olivier Thauvin <nanardon@mandriva.org> 1.8-4mdv2008.1
++ Revision: 172117
+- create directory for icons
+- kill partial changelog rest
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Mon Jul 17 2006 Olivier Thauvin <nanardon@mandriva.org>
++ 2006-07-17 09:54:07 (41417)
+- add patch1
+
+* Mon Jul 17 2006 Olivier Thauvin <nanardon@mandriva.org>
++ 2006-07-17 09:53:28 (41416)
+- fix build (patch1)
+- xdg menu
+- fix old menu section
+
+* Mon Jul 17 2006 Olivier Thauvin <nanardon@mandriva.org>
++ 2006-07-17 09:32:28 (41415)
+Import copter-commander
+
+* Thu Jan 08 2004 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.8-2mdk
+- DIRM fix
+- set RPM_OPT_FLAGS
+
+* Mon Oct 13 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 1.8-1mdk
+- 1st mdk package
+
