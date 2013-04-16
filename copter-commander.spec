@@ -85,14 +85,6 @@ EOF
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%if %mdkversion < 200900
-%{update_menus}
-%update_icon_cache hicolor
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
 
 %files
 %defattr(-,root,root)
