@@ -14,7 +14,7 @@ Source11: %name-32.png
 Source12: %name-48.png
 License: GPLv2+
 Group: Games/Arcade
-Url: http://sourceforge.net/projects/coco/
+Url: https://sourceforge.net/projects/coco/
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libgnome-devel
 BuildRequires: libtiff-devel
