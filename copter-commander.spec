@@ -16,6 +16,7 @@ License: GPLv2+
 Group: Games/Arcade
 Url: https://sourceforge.net/projects/coco/
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	make
 BuildRequires: libgnome-devel
 BuildRequires: libtiff-devel
 BuildRequires: libgtkglarea-devel = 1.2.3 
